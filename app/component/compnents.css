@@ -1,0 +1,21 @@
+.nav_Light {
+    position: absolute;
+    top: 0;
+    left: 1.3em;
+    background-color: var (--white-color);
+    width: 4em; 
+    height: .4em;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    transition: .3s ease;
+}
+.nav_Light::before { 
+    content: '';
+    width: 5em; 
+    height: 7em;
+    position: absolute;
+    top: 4em;
+    background: linear-gradient(to bottom, rgba(255,255,255, -3) -50%, rgba(255,255,255, ®) 98%); 
+    clip-path: polygon(30% 0, 70% 0, 100% 100%, 8% 100%);
+}
