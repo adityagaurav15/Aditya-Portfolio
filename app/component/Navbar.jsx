@@ -14,7 +14,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
     
   return (
-    <div className='w-full '>
+    <div className='w-full'>
       <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 
       ${true ? " bg-opacity-50 backdrop-blur-lg" : ""}`}> 
         <a href='#top'>

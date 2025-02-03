@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.className} ${ovo.className} ${poppins.className} antialiased leading-8
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.className} ${ovo.className} ${poppins.className} antialiased 
         overflow-x-hidden
         bg-gradient-to-r from-blue-50 via-red-50 to-yellow-50
         dark:bg-gradient-to-r dark:from-blue-500 dark:via-red-500 dark:to-yellow-500 dark:text-white`}

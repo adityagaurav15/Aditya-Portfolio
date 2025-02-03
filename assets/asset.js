@@ -4,6 +4,7 @@ import Sun from "./sun.png";
 import Menu from "./menu.png";
 import Cross from "./delete.png";
 import Profile from "./profile.jpg";
+import AdityaImage from "./aditya-image.jpg";
 
 export const Assets = {
   Logo,
@@ -12,4 +13,5 @@ export const Assets = {
   Menu,
   Cross,
   Profile,
+  AdityaImage,
 };

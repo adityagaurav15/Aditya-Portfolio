@@ -1,47 +1,86 @@
-import Image from 'next/image'
-import React from 'react'
-import {Assets} from "../../assets/asset.js"
-import { RetroGrid } from "../../components/ui/retro-grid.jsx";
-import { MorphingText } from "../../components/ui/morphing-text.jsx";
-import { NeonGradientCard } from "../../components/ui/neon-gradient-card";
-
-export function NeonGradientCardDemo() {
-  return (
-    <NeonGradientCard className="max-w-sm items-center justify-center text-center">
-      <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
-        Neon Gradient Card
-      </span>
-    </NeonGradientCard>
-  );
-}
-
+import Image from "next/image";
+import React from "react";
+import { motion } from "motion/react";
+import { Assets } from "../../assets/asset.js";
+import { Meteors } from "@/components/ui/meteors.jsx";
 
 const Header = () => {
   return (
-    // <div className='text-center flex flex-col items-center justify-center gap-4'>
-    //     <h1 className='text-[110px] font-Poppins'>SOFTWARE </h1>
-    //     <h1 className='text-[110px] font-Poppins -mt-16 text-gray-00'>DEVELOPER</h1>
-    // </div>
-    <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
-    items-center justify-center gap-4'> 
-        <div>
-            <Image src={Assets.Profile} alt='' className='rounded-full w-32'/>
+    <div className="w-full flex items-stretch">
+      {/* Left side */}
+      <div className="w-2/5 bg-[#EADBC8]">
+        <div className="w-full mt-28 flex items-center py-10 justify-center">
+          <motion.div
+            initial={{ x: "-10vw" }} // Start from the left (out of view)
+            animate={{ x: 0 }} // Move to its original position
+            transition={{ type: "tween", duration: 2, ease: "easeOut" }}
+            className="relative flex w-7/12 flex-col items-center p-10 overflow-hidden rounded-lg border bg-background md:shadow-xl gap-5 bg-[#f4e9da]"
+          >
+            <Meteors number={50} />
+            <Image
+              src={Assets.AdityaImage}
+              alt=""
+              className="border rounded-md"
+            />
+            <h1 className="font-Poppins text-[#4C3D3D] text-3xl font-extrabold">
+              Aditya Gaurav
+            </h1>
+            <h1 className="font-Poppins text-[#4C3D3D] text-sm text-center whitespace-pre-line leading-relaxed">
+              A developer passionate about building scalable, user-centric, and
+              high-performance applications
+            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 2 }}
+              className="bg-[#4C3D3D] font-poppins text-white w-full rounded-sm"
+            >
+              <a
+                href="#about"
+                className="flex w-full items-center justify-center transition-transform duration-300 hover:scale-105"
+              >
+                More About Me...
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
-        <h3 className='text-xl md:text-2xl mb-3 font-Ovo'>Hi, I'm Aditya Gaurav</h3>
-        <h1 className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>frontend web developer</h1>
-        <p className='max-w-2xl mx-auto font-Ovo'>I am a frontend developer from Bangalore, India with 3.5 years of experience in 
-            companies like Tata Consultancy Services
-        </p>
-        <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
-            <a href='#contact' className='px-10 py-3 border border-white rounded-full bg-black 
-            text-white flex items-center gap-2'>Contact Me</a>
-            <a href='/resume.pdf' download className='px-10 py-3 border rounded-full border-gray-500
-            flex items-center gap-2'>Resume</a>
-        </div>
-    </div>
-   
-    
-  )
-}
+      </div>
 
-export default Header
+      {/* Right side */}
+      <div className="w-3/5 bg-[#F8F0E5]">
+        <div className="w-full mt-28 flex py-10 px-20">
+          <motion.div
+            initial={{ x: "-10vw" }}
+            animate={{ x: 0 }}
+            transition={{ type: "tween", duration: 2, ease: "easeOut" }}
+            className="relative flex w-7/12 flex-col items-center p-10 overflow-hidden gap-5"
+          >
+            <Meteors number={50} />
+            <h1 className="font-Poppins text-[#4C3D3D] text-3xl font-extrabold">
+              Software Developer
+            </h1>
+            <h1 className="font-Poppins text-[#4C3D3D] text-sm text-center whitespace-pre-line leading-relaxed">
+              A developer passionate about building scalable, user-centric, and
+              high-performance applications
+            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 2 }}
+              className="bg-[#4C3D3D] font-poppins text-white w-full rounded-sm"
+            >
+              <a
+                href="#about"
+                className="flex w-full items-center justify-center transition-transform duration-300 hover:scale-105"
+              >
+                More About Me...
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
