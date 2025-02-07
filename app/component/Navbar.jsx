@@ -24,6 +24,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
         <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3  shadow-sm bg-opacity-50 bg-gradient-to-r from-blue-50 via-red-50 to-yellow-50 '>
             <li><a href='#top' className='font-Ovo'>Home</a></li>
             <li><a href='#about' className='font-Ovo'>About Me</a></li>
+            <li><a href='#skill' className='font-Ovo'>Skills</a></li>
             <li><a href='#work' className='font-Ovo'>My Work</a></li>
             <li><a href='#project' className='font-Ovo'>Project</a></li>
             <li><a href='#contact' className='font-Ovo'>Contact me</a></li>
@@ -49,6 +50,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
             <li><a href='#top' onClick={onCloseMenu}  className='font-Ovo'>Home</a></li>
             <li><a href='#about' onClick={onCloseMenu}  className='font-Ovo'>About Me</a></li>
+            <li><a href='#skill' className='font-Ovo'>Skills</a></li>
             <li><a href='#work' onClick={onCloseMenu}  className='font-Ovo'>My Work</a></li>
             <li><a href='#project' onClick={onCloseMenu}  className='font-Ovo'>Project</a></li>
             <li><a href='#contact' onClick={onCloseMenu}  className='font-Ovo'>Contact me</a></li>

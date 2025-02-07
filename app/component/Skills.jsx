@@ -4,10 +4,23 @@ import { motion } from "motion/react";
 import { Assets } from "../../assets/asset.js";
 import { Meteors } from "@/components/ui/meteors.jsx";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button.jsx";
+import { IconCloud } from "@/components/ui/icon-cloud.jsx";
 
-const Header = () => {
+
+const Skills = () => {
+  const images = [
+    Assets.angular,
+    Assets.react,
+    Assets.css,
+    Assets.javaScript,
+    Assets.nextjs,
+    Assets.typeScript,
+    Assets.redux, Assets.materialUi, Assets.tailwind, Assets.spring, Assets.git, Assets.html,
+    Assets.python, Assets.vsCode, Assets.github, Assets.intellij, Assets.java, Assets.aws
+  ];
+  
   return (
-    <div className="w-full flex flex-col lg:flex-row items-stretch">
+    <div id="skill" className="w-full flex flex-col lg:flex-row items-stretch">
       {/* Left side (Top for Mobile & Tablet, Left for Desktop) */}
       <div className="w-full lg:w-2/5 bg-[#EADBC8] flex justify-center">
         <div className="w-full mt-10 lg:mt-20 flex items-center py-10 justify-center">
@@ -16,14 +29,8 @@ const Header = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ type: "tween", duration: 2, ease: "easeOut" }}
             className="relative flex w-10/12 md:w-8/12 lg:w-8/12 flex-col items-center p-6 md:p-8 lg:p-10 overflow-hidden rounded-lg 
-            border md:shadow-xl gap-5 bg-[#F8F0E5] shadow-xl border-none"
+            border md:shadow-xl bg-[#F8F0E5] shadow-xl border-none"
           >
-            <Meteors number={150} />
-            <Image
-              src={Assets.Image}
-              alt=""
-              className="border-none rounded-md transition-transform duration-300 hover:scale-105 z-10"
-            />
             <motion.h1 
             initial={{ y: -20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -31,23 +38,7 @@ const Header = () => {
             className="font-Poppins text-[#4C3D3D] text-2xl md:text-3xl font-extrabold text-center">
               Aditya Gaurav
             </motion.h1>
-            <h1 className="font-Poppins text-[#4C3D3D] text-sm text-center whitespace-pre-line leading-relaxed">
-              A developer passionate about building scalable, user-centric, and
-              high-performance applications
-            </h1>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 2 }}
-              className="bg-[#4C3D3D] font-poppins text-white w-full rounded-sm"
-            >
-              <a
-                href="#about"
-                className="flex w-full items-center justify-center text-[#efdbc4] transition-transform duration-300 hover:scale-105"
-              >
-                More About Me...
-              </a>
-            </motion.div>
+            <IconCloud images={images} />
           </motion.div>
         </div>
       </div>
@@ -93,4 +84,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Skills;
