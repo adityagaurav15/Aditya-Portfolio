@@ -1,11 +1,19 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
-import { Assets } from "../../assets/asset.js";
-import { Meteors } from "@/components/ui/meteors.jsx";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button.jsx";
+import { Assets, SocialMedia } from "../../assets/asset.js";
+import { Meteors } from "@/components-ui/meteors.jsx";
+import { InteractiveHoverButton } from "@/components-ui/interactive-hover-button.jsx";
 
 const Header = () => {
+
+  const socialLinks = [
+    { href: "https://github.com/adityagaurav15", src: Assets.github, alt: "GitHub" },
+    { href: "mailto:your-adityagaurav1598@gmail.com", src: SocialMedia.gmail, alt: "Gmail" },
+    { href: "https://www.linkedin.com/in/adityagaurav-/", src: SocialMedia.linkedIn, alt: "LinkedIn" },
+    { href: "https://instagram.com/adityagaurav__", src: SocialMedia.instagram, alt: "Instagram" },
+  ];
+
   return (
     <div className="w-full flex flex-col lg:flex-row items-stretch">
       {/* Left side (Top for Mobile & Tablet, Left for Desktop) */}
@@ -24,11 +32,12 @@ const Header = () => {
               alt=""
               className="border-none rounded-md transition-transform duration-300 hover:scale-105 z-10"
             />
-            <motion.h1 
-            initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay:1 }}
-            className="font-Poppins text-[#4C3D3D] text-2xl md:text-3xl font-extrabold text-center">
+            <motion.h1
+              initial={{ y: -20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="font-Poppins text-[#4C3D3D] text-2xl md:text-3xl font-extrabold text-center"
+            >
               Aditya Gaurav
             </motion.h1>
             <h1 className="font-Poppins text-[#4C3D3D] text-sm text-center whitespace-pre-line leading-relaxed">
@@ -59,7 +68,7 @@ const Header = () => {
             initial={{ x: "10vw" }}
             animate={{ x: 0 }}
             transition={{ type: "tween", duration: 2, ease: "easeOut" }}
-            className="w-full relative flex flex-col overflow-hidden gap-10 md:gap-14 lg:gap-20"
+            className="w-full relative flex flex-col overflow-hidden gap-5 md:gap-7 lg:gap-10"
           >
             <div className="flex flex-col gap-5 md:gap-8">
               <h1 className="font-Poppins text-[#4C3D3D] text-4xl md:text-6xl lg:text-8xl font-extrabold text-center lg:text-left">
@@ -85,6 +94,24 @@ const Header = () => {
               >
                 Resume
               </InteractiveHoverButton>
+            </div>
+            <div className="flex gap-10 lg:justify-start items-center justify-center">
+              {socialLinks.map((link, index) => (
+                <a
+                  href={link.href}
+                  key={index}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={link.src}
+                    alt={link.alt}
+                    width={30}
+                    height={30}
+                    className="border-none rounded-md transition-transform duration-300 hover:scale-105 z-10"
+                  />
+                </a>
+              ))}
             </div>
           </motion.div>
         </div>

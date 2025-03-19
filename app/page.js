@@ -6,6 +6,7 @@ import About from "./component/About";
 import { useEffect, useState } from "react";
 import ContactMe from "./component/ContactMe";
 import Skills from "./component/Skills";
+import MagicNav from "./component/Navbar2";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      {/* <Main /> */}
+      {/* <MagicNav /> */}
       <Header />
       <About />
       <Skills />

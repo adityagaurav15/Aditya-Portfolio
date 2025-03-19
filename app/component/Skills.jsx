@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import { Assets } from "../../assets/asset.js";
-import { Meteors } from "@/components/ui/meteors.jsx";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button.jsx";
-import { IconCloud } from "@/components/ui/icon-cloud.jsx";
-
+import { Meteors } from "@/components-ui/meteors.jsx";
+import { InteractiveHoverButton } from "@/components-ui/interactive-hover-button.jsx";
+import { IconCloud } from "@/components-ui/icon-cloud.jsx";
+import Tilt from 'react-parallax-tilt';
 
 const Skills = () => {
   const images = [
@@ -15,10 +15,20 @@ const Skills = () => {
     Assets.javaScript,
     Assets.nextjs,
     Assets.typeScript,
-    Assets.redux, Assets.materialUi, Assets.tailwind, Assets.spring, Assets.git, Assets.html,
-    Assets.python, Assets.vsCode, Assets.github, Assets.intellij, Assets.java, Assets.aws
+    Assets.redux,
+    Assets.materialUi,
+    Assets.tailwind,
+    Assets.spring,
+    Assets.git,
+    Assets.html,
+    Assets.python,
+    Assets.vsCode,
+    Assets.github,
+    Assets.intellij,
+    Assets.java,
+    Assets.aws,
   ];
-  
+
   return (
     <div id="skill" className="w-full flex flex-col lg:flex-row items-stretch">
       {/* Left side (Top for Mobile & Tablet, Left for Desktop) */}
@@ -28,17 +38,23 @@ const Skills = () => {
             initial={{ x: "-10vw", opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ type: "tween", duration: 2, ease: "easeOut" }}
-            className="relative flex w-10/12 md:w-8/12 lg:w-8/12 flex-col items-center p-6 md:p-8 lg:p-10 overflow-hidden rounded-lg 
-            border md:shadow-xl bg-[#F8F0E5] shadow-xl border-none"
+            className="relative flex items-center justify-center w-10/12 md:w-8/12 lg:w-8/12 
+  p-6 md:p-8 lg:p-10 overflow-hidden rounded-lg border md:shadow-xl bg-[#F8F0E5] shadow-xl border-none"
           >
-            <motion.h1 
-            initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay:1 }}
-            className="font-Poppins text-[#4C3D3D] text-2xl md:text-3xl font-extrabold text-center">
-              Aditya Gaurav
+            {/* H1 in the center */}
+            <motion.h1
+              initial={{ y: -20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="absolute font-Poppins text-[#4C3D3D] text-2xl md:text-3xl font-extrabold text-center opacity-25"
+            >
+              SKILLS
             </motion.h1>
-            <IconCloud images={images} />
+
+            {/* IconCloud directly on top of H1 */}
+            <div className="relative inset-0 flex items-center justify-center">
+              <IconCloud images={images} />
+            </div>
           </motion.div>
         </div>
       </div>
@@ -54,13 +70,14 @@ const Skills = () => {
           >
             <div className="flex flex-col gap-5 md:gap-8">
               <h1 className="font-Poppins text-[#4C3D3D] text-4xl md:text-6xl lg:text-8xl font-extrabold text-center lg:text-left">
-                SOFTWARE <span className="text-[#DAC0A3]">DEVELOPER</span>
+                Skills 
+                {/* <span className="text-[#DAC0A3]">DEVELOPER</span> */}
               </h1>
-              <h1 className="w-full lg:w-2/3 font-Poppins text-[#4D4D4D] text-center lg:text-left">
-                Passionate about creating intuitive and engaging user
-                experiences. Specialize in transforming ideas into beautifully
-                crafted products.
-              </h1>
+              <Tilt className="shadow-2xl rounded-lg p-6 bg-red-500">
+      <div style={{ height: '300px', backgroundColor: 'darkgreen' }} >
+        <h1>React Parallax Tilt 👀</h1>
+      </div>
+    </Tilt>
             </div>
             <div className="flex justify-center gap-5 lg:justify-start">
               <InteractiveHoverButton

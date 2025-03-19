@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import { Assets } from "../../assets/asset.js";
-import { Meteors } from "@/components/ui/meteors.jsx";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button.jsx";
+import { Meteors } from "@/components-ui/meteors.jsx";
+import { InteractiveHoverButton } from "@/components-ui/interactive-hover-button.jsx";
+import DecryptedText from "@/components-ui/decrypted-text.jsx";
+import RollingGallery from "@/components-ui/rolling-gallery.jsx"
 
 const About = () => {
   return (
@@ -38,8 +40,32 @@ const About = () => {
                 development, API integration, and translating UI/UX designs into
                 functional applications. 
               </h1>
+              {/* <DecryptedText
+                speed={100}
+                maxIterations={20}
+                parentClassName="all-letters"
+                encryptedClassName="encrypted"
+                characters="ABCD1234!?"
+                className="revealed"
+                text="I am a passionate Software Developer based in Bangalore, India,
+  with expertise in React.js, Angular and Springboot. Currently
+  working at Tata Consultancy Services (TCS) since August 2021, I
+  have contributed to projects for Ernst & Young (EY), General
+  Electric Company (GE), Colonial First Bank (CFS) and Auckland
+  Savings Bank (ASB) as a Front-end Developer(React and Angular) ,
+  focusing on building responsive, scalable, and high-performance
+  web applications.
+  <br /> <br />
+  With a strong foundation in JavaScript, TypeScript, Zustand,
+  Redux, and Tailwind CSS, I specialize in crafting dynamic user
+  interfaces, optimizing performance, and ensuring seamless user
+  experiences. My expertise extends to custom component
+  development, API integration, and translating UI/UX designs into
+  functional applications. "
+                animateOn="view"
+                revealDirection="center"
+              /> */}
             </div>
-            
           </motion.div>
         </div>
       </div>
@@ -54,20 +80,23 @@ const About = () => {
             className="relative flex w-10/12 md:w-8/12 lg:w-8/12 flex-col items-center p-6 md:p-8 lg:p-10 overflow-hidden rounded-lg 
           border md:shadow-xl gap-5 bg-[#F8F0E5] shadow-xl border-none"
           >
-            <Meteors number={50} />
-            <Image
+            {/* <Meteors number={50} /> */}
+            {/* <Image
               src={Assets.Image}
               alt=""
               className="border-none rounded-md transition-transform duration-300 hover:scale-105"
-            />
+            /> */}
+            <div className="">
+<RollingGallery autoplay={true} pauseOnHover={true} />
+            </div>
             
+
             <h1 className="font-Poppins text-[#4C3D3D] text-left whitespace-pre-line leading-relaxed">
-            When I’m not building web applications,
-                I love traveling and exploring new places. Experiencing
-                different cultures, trying local cuisines, and creating
-                unforgettable memories excite me the most.
+              When I’m not building web applications, I love traveling and
+              exploring new places. Experiencing different cultures, trying
+              local cuisines, and creating unforgettable memories excite me the
+              most.
             </h1>
-            
           </motion.div>
         </div>
       </div>

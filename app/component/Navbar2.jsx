@@ -1,34 +1,36 @@
-import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
-import {Assets} from "../../assets/asset.js"
- 
-const Navbar = ({isDarkMode, setIsDarkMode}) => {
+import { useState } from "react";
+import "./components.css";
 
-    const sideMenu = useRef()
-    const onOpenMenu = () => {
-        sideMenu.current.style.transform = 'translateX(-16rem)'
-    }
-    const onCloseMenu = () => {
-        sideMenu.current.style.transform = 'translateX(16rem)'
-    }
+const navItems = [
+  { id: 1, icon: "fa-house-chimney", text: "Home", href:'#top' },
+  { id: 2, icon: "fa-user", text: "Profile", href: "#about" },
+  { id: 3, icon: "fa-comments", text: "Messages", href: "#about"  },
+  { id: 4, icon: "fa-camera", text: "Photos", href: "#about"  },
+  { id: 5, icon: "fa-gear", text: "Settings", href: "#about"  },
+];
 
-    
+export default function MagicNav() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    
-    <div className='w-full bg-red-500'>
-      
-      <nav className='flex w-3/5 fixed items-center justify-center z-50 px-5 lg:px-8 xl:px-[8%] py-4'>
-           <ul className='md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 shadow-sm bg-opacity-50 bg-gradient-to-r from-blue-50 via-red-50 to-yellow-50 '>
-            <li><a href='#top' className='font-Ovo'>Home</a></li>
-           <li><a href='#about' className='font-Ovo'>About Me</a></li>
-          <li><a href='#work' className='font-Ovo'>My Work</a></li>
-          <li><a href='#project' className='font-Ovo'>Project</a></li>
-           <li><a href='#contact' className='font-Ovo'>Contact me</a></li>
-
-        </ul>
-      </nav>
+    <div className="navigation w-full fixed z-40 flex items-center justify-center">
+      <ul className="flex bg-[#2f2f2f] relative z-50 p-[1px]">
+        {navItems.map((item, index) => (
+          <li
+            key={item.id}
+            className={`list ${activeIndex === index ? "active" : ""}`}
+            onClick={() => setActiveIndex(index)}
+          >
+            <a href={item.href}>
+              <span className="icon">
+                <i className={`fa-solid ${item.icon}`}></i>
+              </span>
+              <span className="text">{item.text}</span>
+            </a>
+          </li>
+        ))}
+        <div className="indicator" style={{ transform: `translateX(${activeIndex * 80}px)` }}></div>
+      </ul>
     </div>
-  )
+  );
 }
-
-export default Navbar

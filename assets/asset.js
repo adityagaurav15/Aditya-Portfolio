@@ -24,6 +24,18 @@ import vsCode from "./skill-icons/vscode.svg";
 import github from "./skill-icons/github.svg";
 import intellij from "./skill-icons/intellij.svg";
 import java from "./skill-icons/java.svg";
+import adiyogi from "./travel/adiyogi.jpg";
+import chikmagalur from "./travel/chikmagalur.jpg";
+import coorg from "./travel/coorg.jpg";
+import goa from "./travel/goa.jpg";
+import gokarna from "./travel/gokarna.jpg";
+import mysore from "./travel/mysore.jpg";
+import pondicherry from "./travel/pondicherry.jpg";
+import rameshwaram from "./travel/rameshwaram.jpg";
+import wayanad from "./travel/wayanad.jpg";
+import gmail from "./gmail1.svg";
+import instagram from "./instagram.svg";
+import linkedIn from "./linkedin.svg";
 
 export const Assets = {
   Logo,
@@ -54,4 +66,22 @@ export const Assets = {
   intellij: intellij.src || intellij,
   java: java.src || java,
   aws: aws.src || aws,
+};
+
+export const Travel = {
+  adiyogi: adiyogi.src || adiyogi,
+  chikmagalur: chikmagalur.src || chikmagalur,
+  coorg: coorg.src || coorg,
+  goa: goa.src || goa,
+  gokarna: gokarna.src || gokarna,
+  mysore: mysore.src || mysore,
+  pondicherry: pondicherry.src || pondicherry,
+  rameshwaram: rameshwaram.src || rameshwaram,
+  wayanad: wayanad.src || wayanad,
+};
+
+export const SocialMedia = {
+  gmail: gmail.src || gmail,
+  instagram: instagram.src || instagram,
+  linkedIn: linkedIn.src || linkedIn,
 };
